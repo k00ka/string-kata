@@ -33,10 +33,11 @@ You are (almost) there!
 
 ###Simple TDD workflow
 I’m going to give you some directions for what your solution should do.
+
 You are going to:
-. write a test or tests that translate my request into code
-. demonstrate to yourself that those test(s) fail
-. implement mods to make the tests pass
+* write a test or tests that translate my request into code
+* demonstrate to yourself that those test(s) fail
+* implement mods to make the tests pass
 
 ###Tips of TDD
 Implement the simplest code you can imagine to make the tests pass.
@@ -72,7 +73,7 @@ Finished in 0.00108 seconds (files took 0.10543 seconds to load)
 Failed examples:
 
 rspec ./spec/string_calculator_spec.rb:10 # StringCalculator#add returns 0 for empty string
-``
+```
 
 The text ``1 failure`` means you're going to "fail" Math! Now go fix some code and share what you've learned with the group.
 
