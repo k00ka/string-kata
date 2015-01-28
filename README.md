@@ -1,0 +1,2 @@
+# string-kata
+TDD kata
