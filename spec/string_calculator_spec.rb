@@ -8,7 +8,7 @@ require 'string_calculator'
 RSpec.describe StringCalculator, "#add" do
 
   it "returns 0 for empty string" do
-    expect("").to eq(0)
+    expect(StringCalculator.add("")).to eq(0)
   end
 
   # more tests go here
