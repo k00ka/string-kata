@@ -1,17 +1,9 @@
 module StringCalculator
 
   def self.add(string)
-    delimiter, string = extract_delimiter(string)
-    string.split(delimiter).inject(0) { |sum, x| sum + x.to_i }
+    # code to be tested goes here...
   end
 
-  def self.extract_delimiter(string)
-    delimiter = /[,\n]/
-    if string =~ /^\/\//
-      delimiter = string[2]
-      string = string[4..-1]
-    end
-    [ delimiter, string ]
-  end
+  # ...and here when the above becomes too complex.
 
 end
