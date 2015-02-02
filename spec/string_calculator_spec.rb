@@ -31,8 +31,8 @@ RSpec.describe StringCalculator, "#add" do
      expect(StringCalculator.add("12,45")).to eql(57)
   end
 
-  it 'returns 57 for  a value of "1558,2,2442"'do
-     expect(StringCalculator.add("1558,2,2442")).to eql(4002)
+  it 'returns 302 for  a value of "100,2,200"'do
+     expect(StringCalculator.add("100,2,200")).to eql(302)
   end
 
   it 'returns 6 for  a value of "1\n2,3"'do
@@ -61,5 +61,9 @@ RSpec.describe StringCalculator, "#add" do
 
   it 'returns 6 for "//[a?>]4a?>1a?>1"' do
     expect(StringCalculator.add("//[a?>]4a?>1a?>1")).to eql(6)
+  end
+
+  it 'returns 6 for "//[a?>]\n4a?>1a?>1"' do
+    expect(StringCalculator.add("//[a?>]\n4a?>1a?>1")).to eql(6)
   end
 end

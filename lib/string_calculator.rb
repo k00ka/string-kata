@@ -3,6 +3,11 @@ module StringCalculator
     return 0 if string == "" 
     validate(string)
     delimiter = cal_delimiter(string)
+
+    if string =~ /\/\/\[.+\]/
+      string = string[(delimiter.size + 4)..-1]
+    end
+
     string.gsub("\n", delimiter).split(delimiter).select{|num| num.size <= 3 || num == "1000"}.map(&:to_i).reduce(:+)
   end
 
