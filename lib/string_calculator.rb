@@ -2,12 +2,7 @@ module StringCalculator
   def self.add(string)
     return 0 if string == "" 
     validate(string)
-    delimiter = cal_delimiter(string)
-
-    if string =~ /\/\/\[.+\]/
-      string = string[(delimiter.size + 4)..-1]
-    end
-
+    string, delimiter = cal_delimiter(string)
     string.gsub("\n", delimiter).split(delimiter).select{|num| num.size <= 3 || num == "1000"}.map(&:to_i).reduce(:+)
   end
 
@@ -16,11 +11,12 @@ module StringCalculator
     if string.include?("//")
       if string =~ /\/\/\[.+\]/
         delimiter = string.scan(/\/\/\[(.+)\]/).flatten[0]
+        string = string[(delimiter.size + 4)..-1]
       else 
         delimiter = string[2]
       end
     end
-    delimiter
+    [string, delimiter]
   end
 
   def self.validate(string) 
