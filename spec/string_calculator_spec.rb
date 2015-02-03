@@ -23,8 +23,8 @@ RSpec.describe StringCalculator, "#add" do
     expect(StringCalculator.add("1,2")).to eql(3)
   end
 
-  it 'returns 3 for  a value of "1,2"'do
-    expect(StringCalculator.add("1,2")).to eql(3)
+  it 'returns 8 for  a value of "3,5"'do
+    expect(StringCalculator.add("3,5")).to eql(8)
   end
 
   it 'returns 57 for  a value of "12,45"'do
