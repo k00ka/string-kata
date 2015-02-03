@@ -11,5 +11,6 @@ gem 'flog'
 #gem 'mutant-rspec'
 
 gem 'rake'
+gem 'pry'
 gem 'rspec'
 gem 'simplecov'
