@@ -1,26 +1,33 @@
 module StringCalculator
 
   def self.add(string)
-    delimiter, string = extract_delimiter(string)
-    numbers = string.split(delimiter).map(&:to_i)
-    negatives = numbers.select { |x| x < 0 }
-    unless negatives.empty?
-      if negatives.length == 1
-        raise "Cannot handle negative numbers."
-      else
-        raise "Cannot handle negative numbers (#{negatives.join(', ')})."
-      end
-    end
-    numbers.inject(0) { |sum, x| sum + x }
+    values = extract_values(string)
+    raise_error_if_any_negatives(values)
+    values.reduce(:+) || 0
+  end
+
+  def self.extract_values(string)
+    delimiter = extract_delimiter(string)   
+    string.split(/[#{delimiter}\n]/).map(&:to_i)
   end
 
   def self.extract_delimiter(string)
-    delimiter = /[,\n]/
-    if string =~ /^\/\//
-      delimiter = string[2]
-      string = string[4..-1]
+    (string =~ /^\/\//) ? string[2] : ","
+  end
+
+  def self.raise_error_if_any_negatives(values)
+    negatives = extract_negatives(values)
+    case negatives.length
+    when 0
+    when 1
+      raise "Cannot handle negative numbers."
+    else
+      raise "Cannot handle negative numbers (#{negatives.join(", ")})."
     end
-    [ delimiter, string ]
+  end
+
+  def self.extract_negatives(values)
+    values.select { |v| v < 0 }
   end
 
 end
