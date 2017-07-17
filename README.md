@@ -9,9 +9,9 @@ We've restructured the repository to provide a quick-start to TDD with RSpec and
 
 Here are the steps to get you started with the repo. We assume, naturally, that you have a working development machine with Ruby 1.9 or better on it. At Ryatta Group we use rbenv, and so we've included some optional elements - just skip them if you're using rvm or are not versioning your Ruby.
 
-Best prectice would have you "fork" this repo in GitHub (first) and then perform the following steps. If you don't fork the repo, use ``git@github.com:k00ka/string-kata.git`` as the repo address.
+Best prectice would have you "fork" this repo in GitHub (first) and then perform the following steps. If you don't fork the repo, use ``git@github.com:k00ka/string-kata.git`` instead of ``<your-repo-address>``, below.
 ```sh
-% git clone <repo-address>
+% git clone <your-repo-address>
 % cd string-kata
 % gem install bundler
 Fetching: bundler-1.7.4.gem (100%)
