@@ -10,6 +10,6 @@ gem 'flog'
 #gem 'mutant'
 #gem 'mutant-rspec'
 
-gem 'rake'
+gem 'rake', '~>12.3.3'
 gem 'rspec'
 gem 'simplecov'
